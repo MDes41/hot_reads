@@ -8,7 +8,7 @@ RSpec.feature 'Authenticated User' do
     # https://hot-reads.herokuapp.com
 
       conn.post do |req|
-        req.body = link
+        req.params[:body] = link
       end
     end
   end
