@@ -5,8 +5,11 @@ class UrlsController < ApplicationController
 	end
 
 	def create
-		url = JSON.parse(params[:body])['url']
-		Link.create(url: url)
+		url_path = JSON.parse(params[:body])['url']
+		url_record = Url.find_or_create_by(url: url_path)
+		url_status = url_record.status.to_i
+		url_record.status = (url_status + 1)
+		url_record.save
 	end
 
 end

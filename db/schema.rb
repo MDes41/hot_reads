@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20170214010719) do
 
   create_table "urls", force: :cascade do |t|
     t.string   "url"
-    t.string   "status",     default: "0"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

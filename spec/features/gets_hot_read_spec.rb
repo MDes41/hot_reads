@@ -10,6 +10,8 @@ RSpec.feature 'Authenticated User' do
       conn.post do |req|
         req.params[:body] = link
       end
+
+      expect(Url.all.count).to eq(1)
     end
   end
 end
